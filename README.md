@@ -42,3 +42,37 @@ int main() {
     cout << value;
     return 0;
 }
+
+
+
+
+
+
+#include <iostream>
+using namespace std;
+
+class ankush;  
+class ankit;
+
+class ankush {
+private:
+    int money1 = 10;
+
+    friend void rohit(ankush, ankit);
+};
+
+class ankit {
+private:
+    int money2 = 20;
+
+    friend void rohit(ankush, ankit);
+};
+void rohit(ankush obj1, ankit obj2) {
+    cout << "Sum: " << obj1.money1 + obj2.money2 << endl;
+}
+
+int main() {
+    ankush obj1;
+    ankit obj2;
+    rohit(obj1, obj2);  
+}
